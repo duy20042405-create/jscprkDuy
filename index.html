@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jumpscare 😈</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    #scare {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: black;
+      justify-content: center;
+      align-items: center;
+    }
+    #scare img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <h1>Click anywhere 😏</h1>
+
+  <div id="scare">
+    <img src="https://i.ibb.co/4TZxPbF/scary-face.jpg" alt="scary">
+    <audio id="scream" src="https://www.fesliyanstudios.com/play-mp3/387"></audio>
+  </div>
+
+  <script>
+    document.body.addEventListener("click", () => {
+      document.querySelector("h1").style.display = "none";
+      const scare = document.getElementById("scare");
+      scare.style.display = "flex";
+      document.getElementById("scream").play();
+    });
+  </script>
+</body>
+</html>
